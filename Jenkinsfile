@@ -124,10 +124,7 @@ pipeline {
                     echo 'Running Push Docker Image'
                 }
             }
-        }     
-    
-           }          
-        }
+        }                     
         stage('DeployToProduction') {
             when {
                 branch 'master'
