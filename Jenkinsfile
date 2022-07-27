@@ -54,7 +54,7 @@ pipeline {
         }
     }
     environment {
-        DOCKER_IMAGE_NAME = "human537/cicdtest"
+        DOCKER_IMAGE_NAME = "lmg41/cicd-jenkins"
     }
     stages {
         stage('Unit Test') {
