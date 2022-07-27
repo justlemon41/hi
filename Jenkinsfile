@@ -125,13 +125,7 @@ pipeline {
                 }
             }
         }     
-        stage('Canary') {
-            when {
-                branch 'master'
-            }
-           steps {
-//               input 'Deploy to Production ??'
-//               milestone(1)
+    
            }          
         }
         stage('DeployToProduction') {
