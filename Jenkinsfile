@@ -54,7 +54,7 @@ pipeline {
         }
     }
     environment {
-        DOCKER_IMAGE_NAME = "human537/cicdtest"
+        DOCKER_IMAGE_NAME = "ehgur1104/cicdtest"
     }
     stages {
         stage('Unit Test') {
@@ -116,7 +116,7 @@ pipeline {
             steps {     
                 container('topgun') {
                     script {
-                        docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                        docker.withRegistry('https://registry.hub.docker.com', 'docker-id') {
                             app.push("${env.BUILD_NUMBER}")
                             app.push("latest")
                         }
@@ -124,7 +124,7 @@ pipeline {
                     echo 'Running Push Docker Image'
                 }
             }
-        }                     
+        }     
         stage('DeployToProduction') {
             when {
                 branch 'master'
